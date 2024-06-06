@@ -1,13 +1,15 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'vhol_demo'
-version: '1.0.0'
+name: "vhol_demo"
+version: "1.0.0"
 config-version: 2
 
+dbt-cloud:
+    project-id: 70403103933047
+
 # This setting configures which "profile" dbt uses for this project.
-profile: 'vhol_demo'
+profile: "vhol_demo"
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -19,7 +21,7 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-clean-targets:         # directories to be removed by `dbt clean`
+clean-targets: # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
@@ -27,9 +29,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # TODO: update the following to your Snowflake account and Datafold Snowflake datasource_id ID
 vars:
   data_diff:
-    prod_database: DEMO
-    prod_schema: CORE
-    datasource_id: 4932
+    prod_database: ANALYTICS
+    prod_schema: DBT_ADAVID
+    datasource_id: 8002
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models

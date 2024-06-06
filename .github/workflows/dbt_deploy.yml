@@ -46,12 +46,11 @@ jobs:
       - name: submit artifacts to datafold
         run: |
           set -ex
-          datafold dbt upload --ci-config-id 345 --run-type ${DATAFOLD_RUN_TYPE} --commit-sha ${GIT_SHA}
+          datafold dbt upload --ci-config-id 393 --run-type ${DATAFOLD_RUN_TYPE} --commit-sha ${GIT_SHA}
         env: # TODO: update your GitHub secrets to include DATAFOLD_APIKEY
           DATAFOLD_APIKEY: ${{ secrets.DATAFOLD_APIKEY }}
           DATAFOLD_RUN_TYPE: "${{ 'production' }}"
-          GIT_SHA:
-            "${{ github.sha }}"
+          GIT_SHA: "${{ github.sha }}"
 
       # TODO: update for your unique S3 bucket name
       # TODO: update your GitHub secrets to include AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
