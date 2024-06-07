@@ -3,6 +3,7 @@ WITH orgs AS (
     SELECT
         org_id
         , org_name
+        ,domain
         , employee_range
         , created_at
     FROM {{ ref('org_created') }}
